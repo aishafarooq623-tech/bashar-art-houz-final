@@ -161,6 +161,27 @@
   }
 }
 
+@keyframes pageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Horizontal scroll for menu */
+.horizontal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* Custom Utility Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
@@ -176,6 +197,10 @@
 
 .animate-progress {
   animation: progressBar 3s ease-out forwards;
+}
+
+.animate-page-slide {
+  animation: pageSlide 0.6s ease-out forwards;
 }
 
 .text-spaced {
