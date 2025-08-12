@@ -1,132 +1,252 @@
-import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import React, { useState, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-interface HorizontalNavigationProps {
-  isVisible: boolean;
-  onSectionClick?: (section: string) => void;
+interface NavigationItem {
+  id: string;
+  number: string;
+  title: string;
+  image: string;
+  href: string;
 }
 
-const HorizontalNavigation = ({ isVisible, onSectionClick }: HorizontalNavigationProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+interface HorizontalNavigationProps {
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
+  isExpanded,
+  onToggle,
+}) => {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const sections = [
-    { id: 'home', label: 'HOME', subtitle: 'ROOTS', route: '/' },
-    { id: 'about', label: 'About', subtitle: 'ROOTS', route: '/about' },
-    { id: 'studio', label: 'Studio', subtitle: 'TERRITORY', route: '/studio' },
-    { id: 'cafe', label: 'Cafe', subtitle: 'CREATIONS', route: '/cafe' },
-    { id: 'gallery', label: 'Gallery', subtitle: 'EXPERIENCES', route: '/gallery' },
-    { id: 'contact', label: 'Contact', subtitle: 'CONTACTS', route: '/contact' }
+  const navigationItems: NavigationItem[] = [
+    {
+      id: "001",
+      number: "001",
+      title: "HOME",
+      image: "/api/placeholder/400/500",
+      href: "/",
+    },
+    {
+      id: "002",
+      number: "002",
+      title: "ABOUT",
+      image: "/api/placeholder/400/500",
+      href: "/about",
+    },
+    {
+      id: "003",
+      number: "003",
+      title: "STUDIO",
+      image: "/api/placeholder/400/500",
+      href: "/studio",
+    },
+    {
+      id: "004",
+      number: "004",
+      title: "CAFE",
+      image: "/api/placeholder/400/500",
+      href: "/cafe",
+    },
+    {
+      id: "005",
+      number: "005",
+      title: "GALLERY",
+      image: "/api/placeholder/400/500",
+      href: "/gallery",
+    },
+    {
+      id: "006",
+      number: "006",
+      title: "CONTACT",
+      image: "/api/placeholder/400/500",
+      href: "/contact",
+    },
   ];
 
-  const handleSectionClick = (section: any) => {
-    navigate(section.route);
-    setIsMenuOpen(false);
-    if (onSectionClick) {
-      onSectionClick(section.id);
-    }
+  // Horizontal scroll effect for expanded menu
+  const x = useMotionValue(0);
+  const smoothX = useSpring(x, { stiffness: 80, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const bounds = container.getBoundingClientRect();
+    const mouseX = e.clientX - bounds.left;
+    const percent = mouseX / bounds.width;
+
+    const maxScroll = container.scrollWidth - bounds.width;
+    const targetOffset = -maxScroll * percent;
+
+    x.set(targetOffset);
   };
 
-  const handleMouseMove = (e: React.MouseEvent, index: number) => {
-    if (!scrollRef.current) return;
-    
-    const container = scrollRef.current;
-    const containerRect = container.getBoundingClientRect();
-    const mouseX = e.clientX - containerRect.left;
-    const containerWidth = containerRect.width;
-    const scrollWidth = container.scrollWidth;
-    const maxScroll = scrollWidth - containerWidth;
-    
-    // Calculate scroll position based on mouse position
-    const scrollPosition = (mouseX / containerWidth) * maxScroll;
-    container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-    
-    setHoveredIndex(index);
+  // Navigate using useNavigate and close menu
+  const handleItemClick = (href: string) => {
+    navigate(href);
   };
+
+  // Framer Motion variants for staggered letters hover effect
+  const containerVariants = {
+    hover: {
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: 0,
+      },
+    },
+    initial: {},
+  };
+
+  const letterVariants = {
+    initial: { y: 0, opacity: 1 },
+    hover: {
+      y: -8,
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 300,
+        damping: 20,
+      },
+    },
+  };
+
+  // Split text into animated letters
+  const renderStaggeredText = (text: string) => (
+    <motion.div
+      className="inline-block"
+      variants={containerVariants}
+      initial="initial"
+      whileHover="hover"
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          variants={letterVariants}
+          className="inline-block"
+          style={{ display: "inline-block" }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
 
   return (
-    <>
-      {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="font-serif text-2xl text-primary cursor-pointer" onClick={() => navigate('/')}>
-            BASHAR ART HOUZ
-          </div>
-          
-          <Button
-            variant="ghost"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-foreground hover:text-primary"
-          >
-            <span className="text-sm font-sans tracking-wider">
-              {isMenuOpen ? 'CLOSE' : 'MENU'}
-            </span>
-          </Button>
-        </div>
-      </nav>
-
-      {/* Horizontal Menu */}
-      <div className={`fixed inset-0 z-50 bg-background transition-transform duration-700 ease-in-out ${isMenuOpen ? 'translate-y-0' : 'translate-y-full'}`}>
-        <div className="h-full flex flex-col">
-          {/* Menu Header */}
-          <div className="container mx-auto px-6 py-4 flex justify-between items-center border-b border-border">
-            <div className="font-serif text-2xl text-primary cursor-pointer" onClick={() => navigate('/')}>
-              BASHAR ART HOUZ
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-700 ease-in-out ${
+        isExpanded ? "h-[80vh] bg-background shadow-xl" : "h-20 bg-background/90 backdrop-blur-md"
+      }`}
+    >
+      {!isExpanded ? (
+        <div className="h-full flex items-center justify-evenly select-none">
+          {navigationItems.map((item) => (
+            <div
+              key={item.id}
+              className="text-center cursor-pointer"
+              onClick={() => handleItemClick(item.href)}
+            >
+              <div className="text-foreground text-sm tracking-widest mb-1">
+                {renderStaggeredText(item.title)}
+              </div>
             </div>
-            <Button
-              variant="ghost"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-foreground hover:text-primary"
+          ))}
+        </div>
+      ) : (
+        <div className="h-full flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <button
+              onClick={onToggle}
+              className="text-foreground text-sm tracking-widest hover:text-primary transition-colors duration-300"
             >
-              <span className="text-sm font-sans tracking-wider">CLOSE</span>
-            </Button>
+              CLOSE
+            </button>
+            <div className="text-foreground font-light tracking-widest text-lg">BASHAR ART HOUZ</div>
+            <div className="text-foreground text-sm tracking-widest hover:text-primary transition-colors duration-300 cursor-pointer">
+              CONTACTS
+            </div>
           </div>
 
-          {/* Horizontal Menu Content */}
-          <div className="flex-1 flex items-center justify-center overflow-hidden">
-            <div 
-              ref={scrollRef}
-              className="flex gap-8 px-12 overflow-x-auto horizontal-scroll"
-              style={{ width: '100vw', paddingLeft: '50vw', paddingRight: '50vw' }}
-            >
-              {sections.map((section, index) => (
+          {/* Horizontal Navigation */}
+          <div
+            className="flex-1 flex items-center px-[15vw] overflow-hidden relative"
+            onMouseMove={handleMouseMove}
+            ref={containerRef}
+          >
+            <motion.div className="flex gap-8" style={{ x: smoothX }}>
+              {navigationItems.map((item) => (
                 <div
-                  key={section.id}
-                  className="group cursor-pointer flex-shrink-0 animate-fade-in-up transition-all duration-500"
-                  style={{ 
-                    animationDelay: `${index * 100}ms`,
-                    transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)',
-                    opacity: hoveredIndex !== null && hoveredIndex !== index ? 0.6 : 1
-                  }}
-                  onClick={() => handleSectionClick(section)}
-                  onMouseMove={(e) => handleMouseMove(e, index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+                  key={item.id}
+                  className="flex-none w-[300px] group cursor-pointer transform transition-all duration-500 hover:scale-105"
+                  onClick={() => handleItemClick(item.href)}
+                  onMouseEnter={() => setHoveredItem(item.id)}
+                  onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <div className="w-80 h-96 bg-muted rounded-lg overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                    <div className="w-full h-full bg-gradient-to-b from-muted to-muted-foreground/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-sm text-muted-foreground mb-2">
-                          00{index + 1}
-                        </div>
-                        <div className="text-xs text-muted-foreground tracking-wider">
-                          {section.subtitle}
+                  {/* Number and Title */}
+                  <div className="text-center mb-4">
+                    <div className="text-2xl font-light text-foreground tracking-wider mb-2 group-hover:text-primary transition-colors duration-300">
+                      {item.number}
+                    </div>
+                    <div className="text-sm text-foreground tracking-widest overflow-hidden">
+                      <span
+                        className={`inline-block transition-transform duration-500 ${
+                          hoveredItem === item.id ? "translate-x-2" : ""
+                        }`}
+                      >
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Image */}
+                  <div className="relative aspect-[3/4] overflow-hidden bg-muted group-hover:shadow-2xl transition-shadow duration-500">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className={`w-full h-full object-cover transition-all duration-700 ${
+                        hoveredItem === item.id ? "scale-110 brightness-110" : ""
+                      }`}
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent transition-opacity duration-500 ${
+                        hoveredItem === item.id ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-foreground text-xs tracking-widest opacity-90">
+                          EXPLORE {item.title}
                         </div>
                       </div>
                     </div>
                   </div>
-                  <h3 className="font-serif text-2xl text-foreground group-hover:text-primary transition-colors duration-300 text-center">
-                    {section.label}
-                  </h3>
                 </div>
               ))}
+            </motion.div>
+          </div>
+
+          {/* Footer Info */}
+          <div className="px-6 py-6 border-t border-border">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-xs text-muted-foreground space-y-4 md:space-y-0">
+              <div className="space-y-1">
+                <div>BASHAR ART HOUZ</div>
+                <div>WHERE ART MEETS PASSION, TRADITION MEETS INNOVATION</div>
+                <div>STUDIO × CAFE × GALLERY</div>
+              </div>
+              <div className="space-y-1 text-right">
+                <div>CONTACT@BASHARTHOUZ.COM</div>
+                <div>FOLLOW US ON SOCIAL MEDIA</div>
+                <div>© 2025 BASHAR ART HOUZ</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

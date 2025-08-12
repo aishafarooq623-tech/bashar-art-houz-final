@@ -21,7 +21,7 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background animate-page-slide">
-      <HorizontalNavigation isVisible={isNavVisible} />
+      {/* Navigation removed - handled by App.tsx */}
       
       <main className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-4xl mx-auto text-center">
