@@ -78,9 +78,8 @@ function AppContent() {
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
 
       <main
-        className={`transition-opacity duration-1000 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        }`}
+        className={`transition-opacity duration-1000 ${isLoading ? "opacity-0" : "opacity-100"
+          }`}
       >
         <Routes>
           <Route path="/" element={<Index />} />
