@@ -1,7 +1,7 @@
 import React from "react";
 import heroBackground from '@/assets/hero-background.jpg';
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import logoImage from '@/assets/logo-cropped.png'; // import your uploaded logo
+import { motion } from "framer-motion";
 
 const HeroSection: React.FC = () => {
   return (
@@ -34,41 +34,25 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Main Logo */}
-        <div className="mb-8">
-          <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full flex items-center justify-center">
-            <div className="text-primary font-serif text-2xl">B</div>
-          </div>
-        </div>
-
-        {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-widest mb-8 animate-fade-in-up">
-          BASHAR ART HOUZ
-        </h1>
-
-        {/* Subtitle */}
-        <div className="text-xl md:text-2xl text-foreground/90 mb-8 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-          <span className="tracking-wider">STUDIO</span>
-          <span className="mx-4 text-primary">×</span>
-          <span className="tracking-wider">CAFE</span>
-          <span className="mx-4 text-primary">×</span>
-          <span className="tracking-wider">GALLERY</span>
+        {/* Logo Image */}
+        <div className="mb-8 animate-fade-in-up">
+          <img
+            src={logoImage}
+            alt="Bashar Art Houz Logo"
+            className="mx-auto max-w-[280px] md:max-w-[380px] lg:max-w-[460px] h-auto mb-4"
+          />
         </div>
 
         {/* Description */}
-        <p className="text-lg md:text-xl text-foreground/80 font-light tracking-wide mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+        <p
+          className="text-lg md:text-xl text-white font-light tracking-wide max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
+          style={{ animationDelay: "400ms" }}
+        >
           An innovative space where you can escape, explore and unleash your
           creativity. Whether you're an artist, writer, entrepreneur, or simply
           someone looking for a dose of inspiration, this new Houz is designed
           to nurture your imagination and spark new ideas.
         </p>
-
-        {/* Decorative Lines */}
-        {/* <div className="flex justify-center items-center space-x-4 mt-16 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary"></div>
-          <div className="w-2 h-2 bg-primary rotate-45"></div>
-          <div className="w-16 h-px bg-gradient-to-l from-transparent to-primary"></div>
-        </div> */}
       </div>
 
       {/* Side Decorations */}
@@ -78,13 +62,6 @@ const HeroSection: React.FC = () => {
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
         <div className="w-px h-32 bg-gradient-to-b from-transparent via-primary to-transparent mr-8"></div>
       </div>
-
-      {/* Scroll Indicator */}
-      {/* <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div> */}
     </section>
   );
 };

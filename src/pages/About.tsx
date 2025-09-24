@@ -6,7 +6,7 @@ import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
 import heroImage from "@/assets/hero-background.jpg"
-import basharPortrait from "@/assets/img1.jpg"
+import basharPortrait from "@/assets/potrait.png"
 import bookCollection from "@/assets/books.png"
 
 const About = () => {
@@ -122,7 +122,7 @@ const About = () => {
                 />
                 <AnimatedText
                   text="BASHAR ART HOUZ"
-                  className="text-6xl lg:text-7xl font-serif font-bold text-cream mb-8 tracking-[0.1em]"
+                  className="text-5xl lg:text-5xl font-serif font-bold text-cream mb-8 tracking-[0.1em]"
                   delay={0.8}
                   stagger={0.08}
                 />
@@ -143,9 +143,22 @@ const About = () => {
                       studio and gallery catering to all art forms.
                     </p>
                   </ScrollReveal>
+
+                  <ScrollReveal delay={1.4}>
+                    <p>
+                      Bashar Art Houz can be defined as a workspace for everyone with or without an art background who have an intense passion for learning art literature and have an admiration for different forms of art. It is about exploring art together and sharing our experiences with other artworks.
+                      {/* Brown color  */}
+                      THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE
+                      {/* Make it italic */}
+                      "Everyone with or without a background in art is welcome."
+                    </p>
+                  </ScrollReveal>
+
                 </div>
 
-                <ScrollReveal delay={1.6}>
+                {/* the section with --- text  */}
+
+                {/* <ScrollReveal delay={1.6}>
                   <div className="mt-12 flex items-center space-x-6">
                     <motion.div
                       className="w-16 h-[2px] bg-gold"
@@ -158,7 +171,7 @@ const About = () => {
                       CREATIVITY • ATHLETICISM • ALTRUISM
                     </span>
                   </div>
-                </ScrollReveal>
+                </ScrollReveal> */}
               </motion.div>
             </ScrollReveal>
 
@@ -257,10 +270,59 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
+
+      {/* Mission Section */}
+      {/*Update this section and merge it with the main section*/}
+      < section className="py-32 px-6 bg-gradient-to-b from-warm-grey/20 to-background" >
+        <div className="max-w-6xl mx-auto text-center">
+          <ScrollReveal>
+            <AnimatedText
+              text="OUR MISSION"
+              className="text-6xl font-serif font-bold text-cream mb-16 tracking-[0.2em]"
+              delay={0.3}
+              stagger={0.1}
+            />
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.5}>
+            <div className="max-w-5xl mx-auto space-y-8">
+              <motion.p
+                className="text-2xl text-cream/85 leading-relaxed font-light"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                Bashar Art Houz can be defined as a workspace for everyone with or without an art background
+                who have an intense passion for learning art literature and have an admiration for different
+                forms of art. It is about exploring art together and sharing our experiences with other artworks.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <AnimatedText
+                  // text="T H I S   I S   W H Y   B A S H A R   A R T   H O U Z   I S   I N C L U S I V E"
+                  text="THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE "
+                  className="text-3xl text-gold font-sans font-medium tracking-[0.15em] mt-12"
+                  delay={1.5}
+                  stagger={0.02}
+                />
+                <p className="text-xl text-cream/90 mt-6 font-light italic tracking-wider">
+                  "Everyone with or without a background in art is welcome."
+                </p>
+              </motion.div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section >
 
       {/* Founder Section */}
-      <ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4}>
+      < ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4} >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="left">
@@ -324,8 +386,23 @@ const About = () => {
                       believe in giving back, fostering community, and making a positive impact on those around me.
                     </p>
                   </ScrollReveal>
+                  <ScrollReveal delay={1.4}>
+                    By combining the transformative power of art with the benefits of
+                    athleticism and altruism, this concept not only enriches lives but also fosters a culture of
+                    creativity, well-being, community connection and over all human welfare.
+                    Bashar Art Houz with being an artistic Houz also focuses on the concept of Athleticism and
+                    Altruism. An innovative space that harmoniously blends creativity, athleticism, and altruism.
+                    Our Art Café, Art Studio, and Art Gallery serve as a vibrant hub for artists, athletes, and the
+                    community, promoting artistic vision, physical well-being, and social good. This unique concept
+                    aims to inspire individuals to express themselves artistically while also fostering a healthy
+                    lifestyle and a commitment to social causes.
+                    Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation an initiative
+                    yet again by BASHAR which simply stands on the fundamental principle of “The Art of giving.”
+                  </ScrollReveal>
 
-                  <ScrollReveal delay={1.6}>
+                  {/* Scroller text thingy  */}
+
+                  {/* <ScrollReveal delay={1.6}>
                     <motion.div
                       className="bg-warm-grey/30 backdrop-blur-sm p-8 rounded-xl border-l-4 border-gold"
                       whileHover={{ x: 10 }}
@@ -336,98 +413,72 @@ const About = () => {
                         welfare of the community."
                       </p>
                     </motion.div>
-                  </ScrollReveal>
+                  </ScrollReveal> */}
                 </div>
               </div>
             </ScrollReveal>
           </div>
         </div>
-      </ParallaxSection>
-
-      {/* Mission Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-warm-grey/20 to-background">
-        <div className="max-w-6xl mx-auto text-center">
-          <ScrollReveal>
-            <AnimatedText
-              text="OUR MISSION"
-              className="text-6xl font-serif font-bold text-cream mb-16 tracking-[0.2em]"
-              delay={0.3}
-              stagger={0.1}
-            />
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.5}>
-            <div className="max-w-5xl mx-auto space-y-8">
-              <motion.p
-                className="text-2xl text-cream/85 leading-relaxed font-light"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
-                Bashar Art Houz can be defined as a workspace for everyone with or without an art background
-                who have an intense passion for learning art literature and have an admiration for different
-                forms of art. It is about exploring art together and sharing our experiences with other artworks.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <AnimatedText
-                  // text="T H I S   I S   W H Y   B A S H A R   A R T   H O U Z   I S   I N C L U S I V E"
-                  text="THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE "
-                  className="text-3xl text-gold font-sans font-medium tracking-[0.15em] mt-12"
-                  delay={1.5}
-                  stagger={0.02}
-                />
-                <p className="text-xl text-cream/90 mt-6 font-light italic tracking-wider">
-                  "Everyone with or without a background in art is welcome."
-                </p>
-              </motion.div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      </ParallaxSection >
 
       {/* Book Collection */}
-      <ParallaxSection className="py-32 px-6" speed={0.3}>
+      < ParallaxSection className="py-32 px-6" speed={0.3} >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="left">
               <div>
                 <AnimatedText
-                  text="D I V E R S E"
+                  text="B I B L I O P H I L E ' S"
                   className="text-xl text-gold/80 font-sans tracking-[0.3em] mb-4"
                   delay={0.3}
                 />
                 <AnimatedText
-                  text="LITERATURE"
+                  text="HAVEN"
                   className="text-6xl font-serif font-bold text-cream mb-12 tracking-[0.1em]"
                   delay={0.6}
                   stagger={0.1}
                 />
 
                 <div className="space-y-8 text-lg text-cream/85 leading-relaxed font-light">
-                  <ScrollReveal delay={1}>
+
+                  <ScrollReveal delay={1.4}>
                     <p>
-                      At Bashar Art Houz, we have a diverse selection of books, spanning various genres and subjects.
-                      Our collection is meticulously curated to include both popular titles and hidden gems, ensuring
-                      there's something for every reader.
+                      Bibliophile’s Haven is a thoughtfully designed corner of the Art Houz, dedicated entirely to book
+                      lovers and curious minds. This cozy literary nook blends the Art Houz creative atmosphere with
+                      the timeless charm of books, offering guests a sanctuary where words, stories, and ideas come
+                      alive.
                     </p>
                   </ScrollReveal>
-
-                  <ScrollReveal delay={1.2}>
+                  <ScrollReveal delay={1.4}>
                     <p>
-                      From fiction to non-fiction, classics to contemporary works, we prioritize inclusivity and aim to
-                      represent diverse voices and perspectives. Additionally, we have sections dedicated to different
-                      languages - fostering a multicultural and inclusive atmosphere.
+                      Here, shelves are filled with a curated collection of novels, poetry, short stories, and journals —
+                      inviting visitors to pick up a book while sipping their favorite brew. Comfortable seating, soft
+                      lighting, and a tranquil ambiance encourage slow reading, quiet reflection, or even shared
+                      discussions about literature.
                     </p>
                   </ScrollReveal>
 
                   <ScrollReveal delay={1.4}>
+                    <p>
+                      More than just a reading space, Bibliophile’s Haven is an experience: a place where coffee
+                      meets chapters, where writers find inspiration, and where readers escape into new worlds.
+                      Whether guests want to lose themselves in a story, jot down thoughts in a journal, or simply
+                      enjoy the calming presence of books, this haven is designed to nurture imagination and spark
+                      creativity.
+                    </p>
+                  </ScrollReveal>
+
+                  <ScrollReveal delay={1.4}>
+                    <p>
+                      At Bashar Art Houz, we have a diverse selection of books, spanning various genres and subjects.
+                      Our collection is meticulously curated to include both popular titles and hidden gems, ensuring
+                      there's something for every reader. From fiction to non-fiction, classics to contemporary works,
+                      we prioritize inclusivity and aim to represent diverse voices and perspectives.
+                      Additionally, we have sections dedicated to different languages this not only caters to
+                      multilingual individuals but also fosters a multicultural and inclusive atmosphere.
+                    </p>
+                  </ScrollReveal>
+                  {/* <ScrollReveal delay={1.4}>
                     <div className="flex flex-wrap gap-4 mt-10">
                       {['Fiction', 'Non-Fiction', 'Art History', 'Philosophy', 'Poetry', 'Multilingual'].map((genre, index) => (
                         <motion.span
@@ -440,7 +491,7 @@ const About = () => {
                         </motion.span>
                       ))}
                     </div>
-                  </ScrollReveal>
+                  </ScrollReveal> */}
                 </div>
               </div>
             </ScrollReveal>
@@ -470,10 +521,10 @@ const About = () => {
             </ScrollReveal>
           </div>
         </div>
-      </ParallaxSection>
+      </ParallaxSection >
 
       {/* Foundation Section */}
-      <section className="py-32 px-6 bg-gradient-to-t from-warm-grey/20 to-background">
+      < section className="py-32 px-6 bg-gradient-to-t from-warm-grey/20 to-background" >
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal>
             <Card className="bg-card/60 backdrop-blur-xl border-gold/30 p-16 relative overflow-hidden">
@@ -521,10 +572,10 @@ const About = () => {
             </Card>
           </ScrollReveal>
         </div>
-      </section>
+      </section >
 
       {/* Call to Action */}
-      <section className="py-32 px-6">
+      < section className="py-32 px-6" >
         <div className="max-w-6xl mx-auto text-center">
           <ScrollReveal>
             <AnimatedText
@@ -570,8 +621,8 @@ const About = () => {
             </div>
           </ScrollReveal>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

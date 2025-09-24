@@ -2,104 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Bashar Art Houz Design System - Luxurious Art & Culture Brand */
+/* Bashar Art Houz Design System - Luxurious Black & Gold Theme */
 
 @layer base {
   :root {
-    /* Brand Colors - Warm, Artistic Palette */
-    --background: 28 15% 8%;
-    --foreground: 42 25% 92%;
+    /* Black & Gold Palette */
+    --background: 0 0% 0%;
+    /* Pure Black */
+    --foreground: 46 90% 60%;
+    /* Gold */
 
-    --card: 28 12% 12%;
-    --card-foreground: 42 25% 92%;
+    --card: 0 0% 0%;
+    /* Black */
+    --card-foreground: 46 90% 60%;
+    /* Gold */
 
-    --popover: 28 12% 12%;
-    --popover-foreground: 42 25% 92%;
+    --popover: 0 0% 0%;
+    /* Black */
+    --popover-foreground: 46 90% 60%;
+    /* Gold */
 
-    --primary: 42 68% 58%;
-    --primary-foreground: 28 15% 8%;
+    --primary: 46 90% 60%;
+    /* Gold */
+    --primary-foreground: 0 0% 0%;
+    /* Black */
 
-    --secondary: 35 45% 35%;
-    --secondary-foreground: 42 25% 92%;
+    --secondary: 46 80% 70%;
+    /* Lighter Gold */
+    --secondary-foreground: 0 0% 0%;
+    /* Black */
 
-    --muted: 28 8% 18%;
-    --muted-foreground: 42 15% 65%;
+    --muted: 0 0% 10%;
+    /* Deep Black */
+    --muted-foreground: 46 60% 70%;
+    /* Muted Gold */
 
-    --accent: 42 68% 58%;
-    --accent-foreground: 28 15% 8%;
+    --accent: 46 90% 60%;
+    /* Gold */
+    --accent-foreground: 0 0% 0%;
+    /* Black */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 42 25% 92%;
+    /* Keep red for alerts */
+    --destructive-foreground: 46 90% 60%;
+    /* Gold on red */
 
-    --border: 28 8% 22%;
-    --input: 28 8% 22%;
-    --ring: 42 68% 58%;
+    --border: 46 40% 30%;
+    /* Subtle Dark Gold */
+    --input: 46 40% 30%;
+    --ring: 46 90% 60%;
+    /* Gold glow */
 
     --radius: 0.5rem;
 
     /* Custom Brand Variables */
-    --gold: 42 68% 58%;
-    --gold-light: 42 58% 68%;
-    --bronze: 35 45% 35%;
-    --charcoal: 28 15% 8%;
-    --cream: 42 25% 92%;
-    --warm-grey: 28 8% 18%;
+    --gold: 46 90% 60%;
+    --gold-light: 46 80% 70%;
+    --gold-dark: 46 60% 40%;
+    --black: 0 0% 0%;
+    --charcoal: 0 0% 10%;
+    --cream: 46 80% 85%;
+    /* Pale gold/cream */
+    --warm-grey: 0 0% 15%;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    /* Black */
+    --sidebar-foreground: 46 90% 60%;
+    /* Gold */
+    --sidebar-primary: 46 90% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    /* Dark Black */
+    --sidebar-accent-foreground: 46 80% 70%;
+    /* Lighter Gold */
+    --sidebar-border: 46 40% 30%;
+    --sidebar-ring: 46 90% 60%;
   }
 
   .dark {
-    /* Same luxurious palette for dark mode */
-    --background: 28 15% 8%;
-    --foreground: 42 25% 92%;
+    /* Keep dark mode consistent with black & gold */
+    --background: 0 0% 0%;
+    --foreground: 46 90% 60%;
 
-    --card: 28 12% 12%;
-    --card-foreground: 42 25% 92%;
+    --card: 0 0% 0%;
+    --card-foreground: 46 90% 60%;
 
-    --popover: 28 12% 12%;
-    --popover-foreground: 42 25% 92%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 46 90% 60%;
 
-    --primary: 42 68% 58%;
-    --primary-foreground: 28 15% 8%;
+    --primary: 46 90% 60%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 35 45% 35%;
-    --secondary-foreground: 42 25% 92%;
+    --secondary: 46 80% 70%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 28 8% 18%;
-    --muted-foreground: 42 15% 65%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 46 60% 70%;
 
-    --accent: 42 68% 58%;
-    --accent-foreground: 28 15% 8%;
+    --accent: 46 90% 60%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 42 25% 92%;
+    --destructive-foreground: 46 90% 60%;
 
-    --border: 28 8% 22%;
-    --input: 28 8% 22%;
-    --ring: 42 68% 58%;
+    --border: 46 40% 30%;
+    --input: 46 40% 30%;
+    --ring: 46 90% 60%;
 
-    --sidebar-background: 28 15% 8%;
-    --sidebar-foreground: 42 25% 92%;
-    --sidebar-primary: 42 68% 58%;
-    --sidebar-primary-foreground: 28 15% 8%;
-    --sidebar-accent: 28 8% 18%;
-    --sidebar-accent-foreground: 42 25% 92%;
-    --sidebar-border: 28 8% 22%;
-    --sidebar-ring: 42 68% 58%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 46 90% 60%;
+    --sidebar-primary: 46 90% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 46 80% 70%;
+    --sidebar-border: 46 40% 30%;
+    --sidebar-ring: 46 90% 60%;
   }
 }
 
@@ -117,101 +136,143 @@
   }
 }
 
-/* Custom Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Custom Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Bashar Art Houz Design System - Luxurious Black & Brown Theme */
+
+@layer base {
+  :root {
+    /* Black & Brown Palette */
+    --background: 0 0% 0%;
+    /* Pure Black */
+    --foreground: 27 28% 42%;
+    /* #896750 as HSL approximation */
+
+    --card: 0 0% 0%;
+    /* Black */
+    --card-foreground: 27 28% 42%;
+    /* Brown */
+
+    --popover: 0 0% 0%;
+    /* Black */
+    --popover-foreground: 27 28% 42%;
+    /* Brown */
+
+    --primary: 27 28% 42%;
+    /* Brown */
+    --primary-foreground: 0 0% 0%;
+    /* Black */
+
+    --secondary: 27 28% 55%;
+    /* Slightly lighter brown variation */
+    --secondary-foreground: 0 0% 0%;
+    /* Black */
+
+    --muted: 0 0% 10%;
+    /* Deep Black */
+    --muted-foreground: 27 20% 60%;
+    /* Muted Brown */
+
+    --accent: 27 28% 42%;
+    /* Brown */
+    --accent-foreground: 0 0% 0%;
+    /* Black */
+
+    --destructive: 0 84.2% 60.2%;
+    /* Keep red for alerts */
+    --destructive-foreground: 27 28% 42%;
+    /* Brown on red */
+
+    --border: 27 20% 25%;
+    /* Darker Brown */
+    --input: 27 20% 25%;
+    --ring: 27 28% 42%;
+    /* Brown Glow */
+
+    --radius: 0.5rem;
+
+    /* Custom Brand Variables */
+    --brown: 27 28% 42%;
+    /* #896750 */
+    --brown-light: 27 28% 55%;
+    --brown-dark: 27 28% 25%;
+    --black: 0 0% 0%;
+    --charcoal: 0 0% 10%;
+    --cream: 27 25% 80%;
+    /* Light cream tone to pair with brown */
+    --warm-grey: 0 0% 15%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    /* Black */
+    --sidebar-foreground: 27 28% 42%;
+    /* Brown */
+    --sidebar-primary: 27 28% 42%;
+    /* Brown */
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    /* Dark Black */
+    --sidebar-accent-foreground: 27 28% 55%;
+    /* Lighter Brown */
+    --sidebar-border: 27 20% 25%;
+    /* Dark Brown */
+    --sidebar-ring: 27 28% 42%;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .dark {
+    /* Keep dark mode consistent with black & brown */
+    --background: 0 0% 0%;
+    --foreground: 27 28% 42%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 27 28% 42%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 27 28% 42%;
+
+    --primary: 27 28% 42%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 27 28% 55%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 27 20% 60%;
+
+    --accent: 27 28% 42%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 27 28% 42%;
+
+    --border: 27 20% 25%;
+    --input: 27 20% 25%;
+    --ring: 27 28% 42%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 27 28% 42%;
+    --sidebar-primary: 27 28% 42%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 27 28% 55%;
+    --sidebar-border: 27 20% 25%;
+    --sidebar-ring: 27 28% 42%;
   }
 }
 
-@keyframes slideInFromBottom {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes letterSpacing {
-  from {
-    letter-spacing: 0.1em;
+  body {
+    @apply bg-background text-foreground font-serif overflow-x-hidden;
   }
 
-  to {
-    letter-spacing: 0.3em;
+  html {
+    scroll-behavior: smooth;
   }
-}
-
-@keyframes progressBar {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes pageSlide {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Horizontal scroll for menu */
-.horizontal-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* Custom Utility Classes */
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-slide-in-bottom {
-  animation: slideInFromBottom 0.6s ease-out forwards;
-}
-
-.animate-letter-spacing {
-  animation: letterSpacing 2s ease-in-out infinite alternate;
-}
-
-.animate-progress {
-  animation: progressBar 3s ease-out forwards;
-}
-
-.animate-page-slide {
-  animation: pageSlide 0.6s ease-out forwards;
-}
-
-.text-spaced {
-  letter-spacing: 0.2em;
-}
-
-.text-extra-spaced {
-  letter-spacing: 0.4em;
 }
