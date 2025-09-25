@@ -1,10 +1,15 @@
 import React from "react";
-import heroBackground from '@/assets/home/home-main.png';
-import logoImage from '@/assets/logo-cropped.png'; // import your uploaded logo
+import heroBackground from "@/assets/home/home-main.png";
+import logoImage from "@/assets/logo-cropped.png";
 import { motion } from "framer-motion";
+import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
+import AnimatedText from "@/components/AnimatedText"; // your existing AnimatedText
 
+interface HeroSectionProps {
+  onMenuClick: () => void; // we pass this down from AppLayout/Header
+}
 
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
   return (
     <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -34,15 +39,40 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
+      {/* Top Bar (Menu + Socials) */}
+      <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between">
+        {/* Menu Text */}
+        <div onClick={onMenuClick} className="cursor-pointer">
+          <AnimatedText
+            text="MENU"
+            className="text-lg md:text-xl font-light tracking-widest text-white hover:text-gold transition-colors duration-300"
+            delay={0.2}
+          />
+        </div>
+
+        {/* Social Icons (animated like text) */}
+        <div className="flex space-x-6 text-white text-xl">
+          {[
+            { Icon: FaInstagram, href: "http://instagram.com/shammaskavi/" },
+            { Icon: FaFacebookF, href: "https://www.linkedin.com/company/zawr-industries/posts/?feedView=all" },
+            { Icon: FaTwitter, href: "http://twitter.com/shammaskavi/" },
+          ].map(({ Icon, href }, idx) => (
+            <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
+              <Icon className="hover:text-gold transition-colors duration-300" />
+
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Center Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Logo Image */}
+        {/* Logo */}
         <div className="mb-8 animate-fade-in-up">
           <img
             src={logoImage}
             alt="Bashar Art Houz Logo"
             className="mx-auto max-w-[360px] md:max-w-[480px] lg:max-w-[600px] h-auto mb-4"
-          // className="mx-auto w-3/4 md:w-2/3 lg:w-3/4 h-auto mb-4"
-
           />
         </div>
 
@@ -56,14 +86,6 @@ const HeroSection: React.FC = () => {
           someone looking for a dose of inspiration, this new Houz is designed
           to nurture your imagination and spark new ideas.
         </p>
-      </div>
-
-      {/* Side Decorations */}
-      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
-        <div className="w-px h-32 bg-gradient-to-b from-transparent via-primary to-transparent ml-8"></div>
-      </div>
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
-        <div className="w-px h-32 bg-gradient-to-b from-transparent via-primary to-transparent mr-8"></div>
       </div>
     </section>
   );

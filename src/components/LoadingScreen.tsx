@@ -43,7 +43,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
       {/* Progress Bar */}
       <div className="w-80 md:w-96 h-px bg-border mb-8">
-        <div 
+        <div
           className="h-full bg-primary transition-all duration-100 ease-out"
           style={{ width: `${progress}%` }}
         />

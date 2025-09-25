@@ -4,6 +4,7 @@ import ParallaxSection from "@/components/ParallaxSection";
 import AnimatedText from "@/components/AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Coffee, Leaf, Heart, Users, Utensils, Recycle, Lightbulb, HandHeart } from "lucide-react";
+import cafeImage from "@/assets/cafe/hero image-2.png"
 
 const Cafe = () => {
   const ethicalPractices = [
@@ -73,7 +74,7 @@ const Cafe = () => {
       {/* Hero Section */}
       <ParallaxSection
         className="min-h-screen flex items-center justify-center"
-        image="/src/assets/art-houz-hero.jpg"
+        image={cafeImage}
       >
         {/* Floating Particles */}
         {[...Array(8)].map((_, i) => (
