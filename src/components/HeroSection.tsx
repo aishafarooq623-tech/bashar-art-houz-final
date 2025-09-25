@@ -1,7 +1,8 @@
 import React from "react";
-import heroBackground from '@/assets/hero-background.jpg';
+import heroBackground from '@/assets/home/home-main.png';
 import logoImage from '@/assets/logo-cropped.png'; // import your uploaded logo
 import { motion } from "framer-motion";
+
 
 const HeroSection: React.FC = () => {
   return (
@@ -39,7 +40,9 @@ const HeroSection: React.FC = () => {
           <img
             src={logoImage}
             alt="Bashar Art Houz Logo"
-            className="mx-auto max-w-[280px] md:max-w-[380px] lg:max-w-[460px] h-auto mb-4"
+            className="mx-auto max-w-[360px] md:max-w-[480px] lg:max-w-[600px] h-auto mb-4"
+          // className="mx-auto w-3/4 md:w-2/3 lg:w-3/4 h-auto mb-4"
+
           />
         </div>
 

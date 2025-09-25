@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
-import heroImage from "@/assets/hero-background.jpg"
+import heroImage from "@/assets/about/about-hero.jpg";
 import basharPortrait from "@/assets/potrait.png"
 import bookCollection from "@/assets/books.png"
 

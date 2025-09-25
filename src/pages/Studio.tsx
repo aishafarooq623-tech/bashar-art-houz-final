@@ -5,7 +5,7 @@ import { Palette, Music, Camera, PenTool, Mic, icons, Landmark, WandSparkles, Pe
 import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
-import heroImage from "@/assets/hero-background.jpg";
+import heroImage from "@/assets/studio/studio-main.png";
 import { Description } from "@radix-ui/react-toast";
 import { title } from "process";
 
