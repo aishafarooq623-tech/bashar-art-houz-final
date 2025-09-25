@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Palette, Music, Camera, PenTool, Mic, icons, Landmark, WandSparkles, PencilRuler, Sofa, Brush, } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
@@ -97,32 +97,44 @@ const Studio = () => {
   return (
     <div ref={containerRef} className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center">
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal/95"></div>
-        </motion.div>
-
-        <div className="relative z-10 text-center px-6">
-          <AnimatedText
-            text="STUDIO"
-            className="text-7xl md:text-9xl font-serif font-bold text-cream tracking-[0.2em] mb-6"
-            delay={0.5}
+      {/* Hero Section */}
+      <ParallaxSection
+        className="min-h-screen flex items-center justify-center"
+        image={heroImage}
+      >
+        {/* Floating Particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gold/30 rounded-full"
+            style={{
+              left: `${20 + i * 10}%`,
+              top: `${30 + (i % 3) * 20}%`,
+            }}
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 4 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-          <div className="w-32 h-[2px] bg-gold mx-auto mb-6" />
-          <AnimatedText
-            text="Where Art Comes to Life"
-            className="text-xl md:text-2xl text-cream/90 font-light tracking-[0.15em]"
-            delay={1}
-          />
+        ))}
+        <div className="container mx-auto px-6 text-center">
+          <ScrollReveal direction="up" delay={0.2}>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 font-playfair">
+              Studio
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+              Where art comes to life — a creative haven for artists across all disciplines.
+            </p>
+          </ScrollReveal>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Introduction */}
       <ParallaxSection className="py-24 px-6" speed={0.2}>

@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import AnimatedText from "@/components/AnimatedText";
 import { Card, CardContent } from "@/components/ui/card";
+import ParallaxSection from "@/components/ParallaxSection";
+import ScrollReveal from "@/components/ScrollReveal";
+import heroImage from "@/assets/studio/studio-main.png";
+
 
 const Contact = () => {
   const ref = useRef(null);
@@ -9,22 +13,44 @@ const Contact = () => {
   return (
     <div ref={ref} className="w-full bg-black text-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-[url('/contact-hero.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-6"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4">
-            Contact Page
-          </h1>
-          <p className="max-w-2xl mx-auto text-lg text-gray-200">
-            What makes us a Mixture of all Three
-          </p>
-        </motion.div>
-      </section>
+      <ParallaxSection
+        className="min-h-screen flex items-center justify-center"
+        image={heroImage}
+      >
+        {/* Floating Particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gold/30 rounded-full"
+            style={{
+              left: `${20 + i * 10}%`,
+              top: `${30 + (i % 3) * 20}%`,
+            }}
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 4 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+        <div className="container mx-auto px-6 text-center">
+          <ScrollReveal direction="up" delay={0.2}>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 font-playfair">
+              Contact Us
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+              Lets Get in Touch. We would love to hear from you!
+            </p>
+          </ScrollReveal>
+        </div>
+      </ParallaxSection>
+
 
       {/* Section 1 - What makes us a Mixture of all Three */}
       <section className="py-20 px-6 md:px-20 bg-black">

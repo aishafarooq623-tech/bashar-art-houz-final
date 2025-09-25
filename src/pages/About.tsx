@@ -19,71 +19,14 @@ const About = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.2]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
-
   return (
     <div ref={containerRef} className="min-h-screen bg-background overflow-hidden">
-      {/* Hero Section with Cinematic Parallax */}
-      <section className="relative h-screen flex items-center justify-center">
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{
-            y: heroY,
-            scale: heroScale,
-            opacity: heroOpacity,
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal/95"></div>
-        </motion.div>
-
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <AnimatedText
-              text="ABOUT"
-              className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-widest mb-8 animate-fade-in-up"
-              // className="text-8xl md:text-[12rem] font-serif font-bold text-cream mb-8 tracking-[0.3em]"
-              delay={1}
-              stagger={0.1}
-            />
-          </motion.div>
-
-          <motion.div
-            className="w-48 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 2 }}
-          />
-
-          <AnimatedText
-            text="THE ARTIST'S PLAYGROUND"
-            className="text-xl md:text-2xl text-foreground/90 mb-8 animate-fade-in-up"
-            // className="text-2xl md:text-3xl text-cream/90 font-sans tracking-[0.2em]"
-            delay={2.5}
-            stagger={0.03}
-          />
-
-          <motion.div
-            className="mt-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 3.5 }}
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-gold/50 text-gold hover:bg-gold hover:text-charcoal font-sans text-lg px-12 py-4 tracking-wider backdrop-blur-sm"
-            >
-              EXPLORE OUR STORY
-            </Button>
-          </motion.div>
-        </div>
-
+      {/* Hero Section (Borrowed from Cafe styling) */}
+      {/* Hero Section */}
+      <ParallaxSection
+        className="min-h-screen flex items-center justify-center"
+        image={heroImage}
+      >
         {/* Floating Particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -104,7 +47,24 @@ const About = () => {
             }}
           />
         ))}
-      </section>
+        <div className="container mx-auto px-6 text-center">
+          <ScrollReveal direction="up" delay={0.2}>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 font-playfair">
+              About Us
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.6}>
+            <Button size="lg" className="bg-white text-charcoal hover:bg-white/90 px-8 py-4 text-lg">
+              Explore Our Roots
+            </Button>
+          </ScrollReveal>
+        </div>
+      </ParallaxSection>
 
       {/* Introduction Section */}
       <ParallaxSection className="py-32 px-6" speed={0.3}>

@@ -39,65 +39,10 @@ const Gallery = () => {
   return (
     <div ref={containerRef} className="min-h-screen bg-background overflow-hidden">
       {/* Hero Section with Cinematic Parallax */}
-      <section className="relative h-screen flex items-center justify-center">
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{
-            y: heroY,
-            scale: heroScale,
-            opacity: heroOpacity,
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal/95"></div>
-        </motion.div>
-
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <AnimatedText
-              text="GALLERY"
-              className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground tracking-widest mb-8"
-              delay={1}
-              stagger={0.1}
-            />
-          </motion.div>
-
-          <motion.div
-            className="w-48 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 2 }}
-          />
-
-          <AnimatedText
-            text="WHERE LOCAL ARTISTRY MEETS COMMUNITY"
-            className="text-xl md:text-2xl text-foreground/90 mb-8"
-            delay={2.5}
-            stagger={0.03}
-          />
-
-          <motion.div
-            className="mt-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 3.5 }}
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-gold/50 text-gold hover:bg-gold hover:text-charcoal font-sans text-lg px-12 py-4 tracking-wider backdrop-blur-sm"
-            >
-              EXPLORE OUR COLLECTION
-            </Button>
-          </motion.div>
-        </div>
-
+      <ParallaxSection
+        className="min-h-screen flex items-center justify-center"
+        image={heroImage}
+      >
         {/* Floating Particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -118,7 +63,19 @@ const Gallery = () => {
             }}
           />
         ))}
-      </section>
+        <div className="container mx-auto px-6 text-center">
+          <ScrollReveal direction="up" delay={0.2}>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 font-playfair">
+              Gallery
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+              Where Local Artistry Meets Community
+            </p>
+          </ScrollReveal>
+        </div>
+      </ParallaxSection>
 
       {/* What Makes Us An Art Gallery Section */}
       <ParallaxSection className="py-32 px-6" speed={0.3}>
