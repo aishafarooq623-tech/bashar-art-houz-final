@@ -1,6 +1,15 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import heroImage from "@/assets/about/about-hero.jpg";
+import homeimage from "@/assets/home/home-main.png";
+import studioImage from "@/assets/studio/studio-main.png"
+import aboutImage from "@/assets/about/about-hero.jpg"
+import cafeImage from "@/assets/cafe/hero image-2.png"
+import galleryImage from "@/assets/gallery/Hero Image-3.png";
+//contact
+
+
 
 interface NavigationItem {
   id: string;
@@ -28,42 +37,42 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
       id: "001",
       number: "001",
       title: "HOME",
-      image: "/api/placeholder/400/500",
+      image: homeimage,
       href: "/",
     },
     {
       id: "002",
       number: "002",
       title: "ABOUT",
-      image: "/api/placeholder/400/500",
+      image: aboutImage,
       href: "/about",
     },
     {
       id: "003",
       number: "003",
       title: "STUDIO",
-      image: "/api/placeholder/400/500",
+      image: studioImage,
       href: "/studio",
     },
     {
       id: "004",
       number: "004",
       title: "CAFE",
-      image: "/api/placeholder/400/500",
+      image: cafeImage,
       href: "/cafe",
     },
     {
       id: "005",
       number: "005",
       title: "GALLERY",
-      image: "/api/placeholder/400/500",
+      image: galleryImage,
       href: "/gallery",
     },
     {
       id: "006",
       number: "006",
       title: "CONTACT",
-      image: "/api/placeholder/400/500",
+      image: heroImage,
       href: "/contact",
     },
   ];
@@ -138,9 +147,8 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-700 ease-in-out ${
-        isExpanded ? "h-[80vh] bg-background shadow-xl" : "h-20 bg-background/90 backdrop-blur-md"
-      }`}
+      className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-700 ease-in-out ${isExpanded ? "h-[80vh] bg-background shadow-xl" : "h-20 bg-background/90 backdrop-blur-md"
+        }`}
     >
       {!isExpanded ? (
         <div className="h-full flex items-center justify-evenly select-none">
@@ -194,9 +202,8 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
                     </div>
                     <div className="text-sm text-foreground tracking-widest overflow-hidden">
                       <span
-                        className={`inline-block transition-transform duration-500 ${
-                          hoveredItem === item.id ? "translate-x-2" : ""
-                        }`}
+                        className={`inline-block transition-transform duration-500 ${hoveredItem === item.id ? "translate-x-2" : ""
+                          }`}
                       >
                         {item.title}
                       </span>
@@ -208,14 +215,12 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
                     <img
                       src={item.image}
                       alt={item.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${
-                        hoveredItem === item.id ? "scale-110 brightness-110" : ""
-                      }`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredItem === item.id ? "scale-110 brightness-110" : ""
+                        }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent transition-opacity duration-500 ${
-                        hoveredItem === item.id ? "opacity-100" : "opacity-0"
-                      }`}
+                      className={`absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent transition-opacity duration-500 ${hoveredItem === item.id ? "opacity-100" : "opacity-0"
+                        }`}
                     >
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="text-foreground text-xs tracking-widest opacity-90">

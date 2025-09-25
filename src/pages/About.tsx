@@ -148,7 +148,7 @@ const About = () => {
                 <ScrollReveal delay={1.6}>
                   <p>
                     Bashar Art Houz can be defined as a workspace for everyone with or without an art background who have an intense passion for learning art literature and have an admiration for different forms of art. It is about exploring art together and sharing our experiences with other artworks.{" "}
-                    <span className="text-brown italic">
+                    <span className="text-gold italic">
                       THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE – "Everyone with or without a background in art is welcome."
                     </span>
                   </p>
@@ -253,10 +253,8 @@ const About = () => {
           </div>
         </div>
       </section >
-
       {/* Mission Section */}
-      {/*Update this section and merge it with the main section*/}
-      < section className="py-32 px-6 bg-gradient-to-b from-warm-grey/20 to-background" >
+      {/* < section className="py-32 px-6 bg-gradient-to-b from-warm-grey/20 to-background" >
         <div className="max-w-6xl mx-auto text-center">
           <ScrollReveal>
             <AnimatedText
@@ -301,7 +299,7 @@ const About = () => {
             </div>
           </ScrollReveal>
         </div>
-      </section >
+      </section >  */}
 
       {/* Founder Section */}
       {/* < ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4} > */}
@@ -321,7 +319,7 @@ const About = () => {
                     className="w-full h-[700px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-charcoal/30"></div>
-                  <motion.div
+                  {/* <motion.div
                     className="absolute bottom-8 left-8"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -334,7 +332,7 @@ const About = () => {
                       delay={0.8}
                     />
                     <p className="text-gold font-sans tracking-[0.1em]">F O U N D E R  &  V I S I O N A R Y</p>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </div>
             </ScrollReveal>
@@ -368,6 +366,7 @@ const About = () => {
                       taught me discipline, resilience, and a commitment to continuous growth. And as an altruist, I
                       believe in giving back, fostering community, and making a positive impact on those around me.
                     </p>
+                    &nbsp;
                   </ScrollReveal>
                   <ScrollReveal delay={1.4}>
                     By combining the transformative power of art with the benefits of
@@ -379,8 +378,10 @@ const About = () => {
                     community, promoting artistic vision, physical well-being, and social good. This unique concept
                     aims to inspire individuals to express themselves artistically while also fostering a healthy
                     lifestyle and a commitment to social causes.
-                    Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation an initiative
-                    yet again by BASHAR which simply stands on the fundamental principle of “The Art of giving.”
+                    <span className="text-gold italic">
+                      Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation an initiative
+                      yet again by BASHAR which simply stands on the fundamental principle of “The Art of giving.”
+                    </span>
                   </ScrollReveal>
 
                   {/* Scroller text thingy  */}
@@ -507,7 +508,7 @@ const About = () => {
       </ParallaxSection >
 
       {/* Foundation Section */}
-      < section className="py-32 px-6 bg-gradient-to-t from-warm-grey/20 to-background" >
+      {/* < section className="py-32 px-6 bg-gradient-to-t from-warm-grey/20 to-background" >
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal>
             <Card className="bg-card/60 backdrop-blur-xl border-gold/30 p-16 relative overflow-hidden">
@@ -555,7 +556,7 @@ const About = () => {
             </Card>
           </ScrollReveal>
         </div>
-      </section >
+      </section > */}
 
       {/* Call to Action */}
       < section className="py-32 px-6" >
