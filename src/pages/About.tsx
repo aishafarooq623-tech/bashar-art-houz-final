@@ -108,97 +108,79 @@ const About = () => {
 
       {/* Introduction Section */}
       <ParallaxSection className="py-32 px-6" speed={0.3}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <ScrollReveal direction="left" delay={0.2}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <AnimatedText
-                  text="W E L C O M E   T O"
-                  className="text-xl text-gold/80 font-sans tracking-[0.3em] mb-4"
-                  delay={0.5}
-                />
-                <AnimatedText
-                  text="BASHAR ART HOUZ"
-                  className="text-5xl lg:text-5xl font-serif font-bold text-cream mb-8 tracking-[0.1em]"
-                  delay={0.8}
-                  stagger={0.08}
-                />
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          {/* Text Section */}
+          <ScrollReveal direction="up" delay={0.2}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="text-center"
+            >
+              <AnimatedText
+                text="W E L C O M E   T O"
+                className="text-xl text-gold/80 font-sans tracking-[0.3em] mb-4"
+                delay={0.5}
+              />
+              <AnimatedText
+                text="BASHAR ART HOUZ"
+                className="text-5xl lg:text-6xl font-serif font-bold text-cream mb-8 tracking-[0.1em]"
+                delay={0.8}
+                stagger={0.08}
+              />
 
-                <div className="space-y-6 text-lg text-cream/85 leading-relaxed font-light">
-                  <ScrollReveal delay={1.2}>
-                    <p>
-                      Bashar Art Houz "The Artist's Playground" is an innovative space where you can escape, explore
-                      and unleash your creativity. Whether you're an artist, writer, entrepreneur, or simply someone
-                      looking for a dose of inspiration, this new Houz is designed to nurture your imagination and
-                      spark new ideas.
-                    </p>
-                  </ScrollReveal>
+              <div className="space-y-6 text-lg text-cream/85 leading-relaxed font-light max-w-3xl mx-auto">
+                <ScrollReveal delay={1.2}>
+                  <p>
+                    Bashar Art Houz "The Artist's Playground" is an innovative space where you can escape, explore
+                    and unleash your creativity. Whether you're an artist, writer, entrepreneur, or simply someone
+                    looking for a dose of inspiration, this new Houz is designed to nurture your imagination and
+                    spark new ideas.
+                  </p>
+                </ScrollReveal>
 
-                  <ScrollReveal delay={1.4}>
-                    <p>
-                      We're thrilled to introduce ourselves as a unique space that combines a cafe with a workspace –
-                      studio and gallery catering to all art forms.
-                    </p>
-                  </ScrollReveal>
+                <ScrollReveal delay={1.4}>
+                  <p>
+                    We're thrilled to introduce ourselves as a unique space that combines a cafe with a workspace –
+                    studio and gallery catering to all art forms.
+                  </p>
+                </ScrollReveal>
 
-                  <ScrollReveal delay={1.4}>
-                    <p>
-                      Bashar Art Houz can be defined as a workspace for everyone with or without an art background who have an intense passion for learning art literature and have an admiration for different forms of art. It is about exploring art together and sharing our experiences with other artworks.
-                      {/* Brown color  */}
-                      THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE
-                      {/* Make it italic */}
-                      "Everyone with or without a background in art is welcome."
-                    </p>
-                  </ScrollReveal>
-
-                </div>
-
-                {/* the section with --- text  */}
-
-                {/* <ScrollReveal delay={1.6}>
-                  <div className="mt-12 flex items-center space-x-6">
-                    <motion.div
-                      className="w-16 h-[2px] bg-gold"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 1.8 }}
-                    />
-                    <span className="text-gold font-sans font-medium tracking-[0.2em] text-sm">
-                      CREATIVITY • ATHLETICISM • ALTRUISM
+                <ScrollReveal delay={1.6}>
+                  <p>
+                    Bashar Art Houz can be defined as a workspace for everyone with or without an art background who have an intense passion for learning art literature and have an admiration for different forms of art. It is about exploring art together and sharing our experiences with other artworks.{" "}
+                    <span className="text-brown italic">
+                      THIS IS WHY BASHAR ART HOUZ IS INCLUSIVE – "Everyone with or without a background in art is welcome."
                     </span>
-                  </div>
-                </ScrollReveal> */}
-              </motion.div>
-            </ScrollReveal>
+                  </p>
+                </ScrollReveal>
+              </div>
+            </motion.div>
+          </ScrollReveal>
 
-            <ScrollReveal direction="right" delay={0.4}>
-              <motion.div
-                className="relative group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="relative overflow-hidden rounded-2xl">
-                  <motion.img
-                    src={heroImage}
-                    alt="Bashar Art Houz Interior"
-                    className="w-full h-[600px] object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7 }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent"
-                    initial={{ opacity: 0.6 }}
-                    whileHover={{ opacity: 0.2 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-              </motion.div>
-            </ScrollReveal>
-          </div>
+          {/* Image Section */}
+          <ScrollReveal direction="up" delay={0.6}>
+            <motion.div
+              className="relative group mt-16 w-full max-w-4xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl">
+                <motion.img
+                  src={heroImage}
+                  alt="Bashar Art Houz Interior"
+                  className="w-full h-[500px] object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.7 }}
+                />
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent"
+                  initial={{ opacity: 0.6 }}
+                  whileHover={{ opacity: 0.2 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+            </motion.div>
+          </ScrollReveal>
         </div>
       </ParallaxSection>
 
@@ -322,7 +304,8 @@ const About = () => {
       </section >
 
       {/* Founder Section */}
-      < ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4} >
+      {/* < ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4} > */}
+      < ParallaxSection className="py-32 px-6" speed={0.4} >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="left">
