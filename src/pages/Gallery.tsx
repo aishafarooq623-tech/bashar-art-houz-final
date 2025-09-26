@@ -5,8 +5,46 @@ import { Card } from "@/components/ui/card";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
+import ParallaxSlideshow from "@/components/ParallaxSlideshow";
 import { Phone, Mail, MapPin, Flower, TreePine, Coffee } from "lucide-react";
-import heroImage from "../assets/hero-background.jpg"
+
+import heroImage from "@/assets/gallery/Hero Image-3.png"
+import galleryImage1 from "@/assets/gallery/gallery1.png"
+import galleryImage2 from "@/assets/gallery/gallery2.png"
+import galleryImage3 from "@/assets/gallery/gallery3.png"
+import galleryImage4 from "@/assets/gallery/gallery4.png"
+import galleryImage5 from "@/assets/gallery/gallery5.png"
+import galleryImage6 from "@/assets/gallery/gallery6.png"
+import galleryImage7 from "@/assets/gallery/gallery7.png"
+import galleryImage8 from "@/assets/gallery/gallery8.png"
+
+import workshopImage1 from "@/assets/gallery/Bookfairworkshoppic1.png"
+import workshopImage2 from "@/assets/gallery/Bookfairworkshoppic2.png"
+import workshopImage3 from "@/assets/gallery/Ceramic pottery workshop.png"
+import workshopImage4 from "@/assets/gallery/Leather craft workshop.png"
+import workshopImage5 from "@/assets/gallery/Literary workshop.png"
+import workshopImage6 from "@/assets/gallery/Painting Workshop.png"
+import workshopImage7 from "@/assets/gallery/Plant workshop.png"
+import workshopImage8 from "@/assets/gallery/Pottery Workshop.png"
+import workshopImage9 from "@/assets/gallery/Sculpting Workshop.png"
+import workshopImage10 from "@/assets/gallery/Terrarium Workshop.png"
+
+import nature1 from "@/assets/nature/Floristry 1.jpg"
+import nature2 from "@/assets/nature/Floristry 2.jpg"
+import nature3 from "@/assets/nature/Floristry 3.jpg"
+import nature4 from "@/assets/nature/Floristry 4.jpg"
+import nature5 from "@/assets/nature/Nuresry 1.jpg"
+import nature6 from "@/assets/nature/Nursery 2.jpg"
+import nature7 from "@/assets/nature/Nursery 3.jpg"
+import nature8 from "@/assets/nature/Nursery 4.jpg"
+
+import wall1 from "@/assets/gallery/Wall 1.jpg"
+import wall2 from "@/assets/gallery/Wall 2.jpg"
+import wall3 from "@/assets/gallery/Wall 3.jpg"
+import wall4 from "@/assets/gallery/Wall 4.png"
+import wall5 from "@/assets/gallery/Workstation 1.png"
+import wall6 from "@/assets/gallery/Workstation 2.png"
+
 
 const Gallery = () => {
   const containerRef = useRef(null);
@@ -21,19 +59,37 @@ const Gallery = () => {
 
   // Sample gallery images for the photo grid sections
   const galleryImages = [
-    "/api/placeholder/400/300",
-    "/api/placeholder/400/400",
-    "/api/placeholder/400/350",
-    "/api/placeholder/400/320",
-    "/api/placeholder/400/380",
-    "/api/placeholder/400/300",
+    galleryImage1,
+    galleryImage2,
+    galleryImage3,
+    galleryImage4,
+    galleryImage5,
+    galleryImage6,
+    galleryImage7,
+    galleryImage8,
+  ];
+  const workshopImages = [
+    workshopImage1,
+    workshopImage2,
+    workshopImage3,
+    workshopImage4,
+    workshopImage5,
+    workshopImage6,
+    workshopImage7,
+    workshopImage8,
+    workshopImage9,
+    workshopImage10,
   ];
 
   const naturesHavenImages = [
-    "/api/placeholder/400/300",
-    "/api/placeholder/400/350",
-    "/api/placeholder/400/320",
-    "/api/placeholder/400/400",
+    nature1,
+    nature2,
+    nature3,
+    nature4,
+    nature5,
+    nature6,
+    nature7,
+    nature8,
   ];
 
   return (
@@ -121,7 +177,18 @@ const Gallery = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative overflow-hidden rounded-2xl">
-                  <motion.img
+                  <ParallaxSlideshow
+                    images={[
+                      wall5,
+                      wall1,
+                      wall2,
+                      wall3,
+                      wall4,
+                      wall6
+                    ]}
+                    height="600px"
+                  />
+                  {/* <motion.img
                     src={heroImage}
                     alt="Art Gallery Interior"
                     className="w-full h-[600px] object-cover"
@@ -133,7 +200,7 @@ const Gallery = () => {
                     initial={{ opacity: 0.6 }}
                     whileHover={{ opacity: 0.2 }}
                     transition={{ duration: 0.5 }}
-                  />
+                  /> */}
                 </div>
               </motion.div>
             </ScrollReveal>
@@ -141,20 +208,59 @@ const Gallery = () => {
         </div>
       </ParallaxSection>
 
-      {/* Photo Gallery Grid Section */}
+      {/* Photo Gallery Grid Section - SPACES*/}
       <section className="py-32 px-6 bg-warm-grey/20">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal delay={0.2}>
             <AnimatedText
-              text="OUR COLLECTION"
+              text="OUR SPACES"
               className="text-4xl font-serif font-bold text-center text-gold mb-20 tracking-[0.3em]"
               delay={0.3}
             />
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {galleryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="relative overflow-hidden rounded-2xl group"
+                  whileHover={{ scale: 1.05, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.img
+                    src={image}
+                    alt={`Gallery artwork ${index + 1}`}
+                    className="w-full h-80 object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.7 }}
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Photo Gallery Grid Section  - WORKSHOPS*/}
+      <section className="py-32 px-6 bg-warm-grey/20">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal delay={0.2}>
+            <AnimatedText
+              text="OUR WORKSHOPS"
+              className="text-4xl font-serif font-bold text-center text-gold mb-20 tracking-[0.3em]"
+              delay={0.3}
+            />
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.4}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {workshopImages.map((image, index) => (
                 <motion.div
                   key={index}
                   className="relative overflow-hidden rounded-2xl group"

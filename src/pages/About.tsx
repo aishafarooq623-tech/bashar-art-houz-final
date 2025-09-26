@@ -6,8 +6,24 @@ import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
 import heroImage from "@/assets/about/about-hero.jpg";
+import bodyImage1 from "@/assets/about/about1.jpg"
+import bodyImage2 from "@/assets/about/about2.jpg"
+import bodyImage3 from "@/assets/about/about3.png"
+
 import basharPortrait from "@/assets/potrait.png"
 import bookCollection from "@/assets/books.png"
+import ParallaxSlideshow from "@/components/ParallaxSlideshow";
+
+import LiterattureHeroImage from "@/assets/literature/Hero Image.png"
+import lit1 from "@/assets/literature/Bookstore 1.png"
+import lit2 from "@/assets/literature/Bookstore 2.png"
+import lit3 from "@/assets/literature/Bookstore 3.png"
+import lit4 from "@/assets/literature/Cozy Reading Nook 1.1.png"
+import lit5 from "@/assets/literature/Cozy Reading Nook 1.2.png"
+import lit6 from "@/assets/literature/Cozy Reading Nook 1.png"
+import lit7 from "@/assets/literature/Reading Nook 1.png"
+import lit8 from "@/assets/literature/Cozy Reading Nook 1.1.png"
+import lit9 from "@/assets/literature/Cozy Reading Nook 1.2.png"
 
 const About = () => {
   const containerRef = useRef(null);
@@ -116,34 +132,18 @@ const About = () => {
               </div>
             </motion.div>
           </ScrollReveal>
-
-          {/* Image Section */}
-          <ScrollReveal direction="up" delay={0.6}>
-            <motion.div
-              className="relative group mt-16 w-full max-w-4xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl">
-                <motion.img
-                  src={heroImage}
-                  alt="Bashar Art Houz Interior"
-                  className="w-full h-[500px] object-cover"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7 }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent"
-                  initial={{ opacity: 0.6 }}
-                  whileHover={{ opacity: 0.2 }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
-            </motion.div>
-          </ScrollReveal>
         </div>
       </ParallaxSection>
 
+      {/* Image Section */}
+      <ParallaxSlideshow
+        images={[
+          bodyImage1,
+          bodyImage2,
+          bodyImage3
+        ]}
+        height="500px"
+      />
       {/* Philosophy Cards */}
       <section className="py-32 px-6 bg-warm-grey/20">
         <div className="max-w-7xl mx-auto">
@@ -448,7 +448,7 @@ const About = () => {
               >
                 <div className="relative overflow-hidden rounded-2xl">
                   <motion.img
-                    src={bookCollection}
+                    src={LiterattureHeroImage}
                     alt="Book Collection"
                     className="w-full h-[500px] object-cover"
                     whileHover={{ scale: 1.1 }}
@@ -466,6 +466,20 @@ const About = () => {
           </div>
         </div>
       </ParallaxSection >
+      <ParallaxSlideshow
+        images={[
+          lit1,
+          lit2,
+          lit3,
+          lit4,
+          lit5,
+          lit6,
+          lit7,
+          lit8,
+          lit9
+        ]}
+        height="500px"
+      />
 
       {/* Foundation Section */}
       {/* < section className="py-32 px-6 bg-gradient-to-t from-warm-grey/20 to-background" >

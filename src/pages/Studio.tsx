@@ -9,6 +9,23 @@ import heroImage from "@/assets/studio/studio-main.png";
 import { Description } from "@radix-ui/react-toast";
 import { title } from "process";
 
+import ParallaxSlideshow from "@/components/ParallaxSlideshow";
+import bodyImage1 from "@/assets/studio/studio1.jpg"
+import bodyImage2 from "@/assets/studio/studio2.png"
+import bodyImage3 from "@/assets/studio/studio3.png"
+import bodyImage4 from "@/assets/studio/studio4.png"
+import bodyImage5 from "@/assets/studio/studio5.png"
+import bodyImage6 from "@/assets/studio/studio6.png"
+import bodyImage7 from "@/assets/studio/studio7.jpg"
+import bodyImage8 from "@/assets/studio/studio8.jpg"
+import bodyImage9 from "@/assets/studio/studio9.jpg"
+import bodyImage10 from "@/assets/studio/studio10.jpg"
+import bodyImage11 from "@/assets/studio/studio11.jpg"
+import bodyImage12 from "@/assets/studio/studio12.jpg"
+import bodyImage13 from "@/assets/studio/studio13.jpg"
+import bodyImage14 from "@/assets/studio/studio14.jpg"
+
+
 const Studio = () => {
   const containerRef = useRef(null);
 
@@ -198,7 +215,30 @@ const Studio = () => {
           ))}
         </div>
       </section>
-
+      {/* Photos Slider  */}
+      <ParallaxSection className="py-32 px-6" speed={0.3}>
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          <ParallaxSlideshow
+            images={[
+              bodyImage1,
+              bodyImage2,
+              bodyImage3,
+              bodyImage4,
+              bodyImage5,
+              bodyImage6,
+              bodyImage7,
+              bodyImage8,
+              bodyImage9,
+              bodyImage10,
+              bodyImage11,
+              bodyImage12,
+              bodyImage13,
+              bodyImage14
+            ]}
+            height="500px"
+          />
+        </div>
+      </ParallaxSection>
       {/* Facilities & Amenities */}
       <section className="py-24 bg-warm-grey/10">
         <div className="max-w-7xl mx-auto px-6">
