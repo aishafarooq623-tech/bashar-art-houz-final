@@ -312,8 +312,8 @@ const Cafe = () => {
               We achieve our mission through our Qurat-Al-Ain Bashar Foundation, creating lasting
               positive impact in our community and beyond.
             </p>
-            <Link href="https://www.quratalainbashar.com" target="_blank">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg">
+          
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg" onClick={() => window.open("https://www.quratalainbashar.com", "_blank")>
               Learn More About Our Foundation
             </Button>
           </ScrollReveal>
