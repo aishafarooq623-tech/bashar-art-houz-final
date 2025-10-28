@@ -130,6 +130,11 @@ const Gallery = () => {
               Where Local Artistry Meets Community
             </p>
           </ScrollReveal>
+           <ScrollReveal direction="up" delay={0.6}>
+            <Button size="lg" className="bg-white text-charcoal hover:bg-white/90 px-8 py-4 text-lg">
+              Explore Our Work
+            </Button>
+          </ScrollReveal>
         </div>
       </ParallaxSection>
 
