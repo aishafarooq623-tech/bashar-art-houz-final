@@ -2,7 +2,7 @@ import React from "react";
 import heroBackground from "@/assets/home/home-main.png";
 import logoImage from "@/assets/logo-cropped.png";
 import { motion } from "framer-motion";
-import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import AnimatedText from "@/components/AnimatedText"; // your existing AnimatedText
 
 interface HeroSectionProps {
@@ -53,17 +53,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
         {/* Social Icons (animated like text) */}
         <div className="flex space-x-6 text-white text-xl">
           {[
-            { Icon: FaInstagram, href: "http://instagram.com/" },
-            { Icon: FaFacebookF, href: "https://www.facebook.com/" },
-            // { Icon: FaWhatsapp, href: "http://www.whatsapp.com/" },
-            { Icon: FaTwitter, href: "http://x.com/" },
+          { Icon: FaInstagram, href: "https://instagram.com/" },
+          { Icon: FaFacebookF, href: "https://www.facebook.com/" },
+          { Icon: FaWhatsapp, href: "https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20your%20services" },
+          { Icon: FaTwitter, href: "https://twitter.com/" },
           ].map(({ Icon, href }, idx) => (
             <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
               <Icon className="hover:text-gold transition-colors duration-300" />
-
             </a>
           ))}
-        </div>
+      </div>
       </div>
 
       {/* Center Content */}
