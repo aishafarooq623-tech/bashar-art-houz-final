@@ -44,7 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
         {/* Menu Text */}
         <div onClick={onMenuClick} className="cursor-pointer">
           <AnimatedText
-          text="Menu"
+          text=""
             className="text-lg md:text-xl font-light tracking-widest text-white hover:text-gold transition-colors duration-300"
             delay={0.2}
           />
@@ -54,9 +54,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
         <div className="flex space-x-6 text-white text-xl">
           {[
             { Icon: FaInstagram, href: "http://instagram.com/" },
-            { Icon: FaFacebookF, href: "https://www.linkedin.com/" },
-            // { Icon: FaWhatsApp, href: "http://twitter.com/" },
-            { Icon: FaTwitter, href: "http://twitter.com/" },
+            { Icon: FaFacebookF, href: "https://www.facebook.com/" },
+            { Icon: FaWhatsapp, href: "http://www.whatsapp.com/" },
+            { Icon: FaTwitter, href: "http://x.com/" },
           ].map(({ Icon, href }, idx) => (
             <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
               <Icon className="hover:text-gold transition-colors duration-300" />
