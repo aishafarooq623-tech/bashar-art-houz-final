@@ -44,7 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
         {/* Menu Text */}
         <div onClick={onMenuClick} className="cursor-pointer">
           <AnimatedText
-            text="MENU"
+          
             className="text-lg md:text-xl font-light tracking-widest text-white hover:text-gold transition-colors duration-300"
             delay={0.2}
           />
