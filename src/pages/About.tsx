@@ -71,8 +71,7 @@ const About = () => {
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.4}>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </p>
+The artist playground.           </p>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.6}>
             <Button size="lg" className="bg-white text-charcoal hover:bg-white/90 px-8 py-4 text-lg">
