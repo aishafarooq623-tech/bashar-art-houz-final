@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
           {[
           { Icon: FaInstagram, href: "https://instagram.com/" },
           { Icon: FaFacebookF, href: "https://www.facebook.com/" },
-          { Icon: FaWhatsapp, href: "https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20your%20services" },
+          { Icon: FaWhatsapp, href: "https://wa.me/918147844020‬?text=Hello" },
           { Icon: FaTwitter, href: "https://twitter.com/" },
           ].map(({ Icon, href }, idx) => (
             <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
