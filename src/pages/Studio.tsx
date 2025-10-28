@@ -150,6 +150,8 @@ const Studio = () => {
               Where art comes to life — a creative haven for artists across all disciplines.
             </p>
           </ScrollReveal>
+          </ScrollReveal>
+          
         </div>
       </ParallaxSection>
 
