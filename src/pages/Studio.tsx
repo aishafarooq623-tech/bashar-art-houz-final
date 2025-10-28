@@ -150,6 +150,10 @@ const Studio = () => {
               Where art comes to life — a creative haven for artists across all disciplines.
             </p>
           </ScrollReveal>
+           <ScrollReveal direction="up" delay={0.6}>
+            <Button size="lg" className="bg-white text-charcoal hover:bg-white/90 px-8 py-4 text-lg">
+              Explore Our Roots
+            </Button>
           </ScrollReveal>
           
         </div>
