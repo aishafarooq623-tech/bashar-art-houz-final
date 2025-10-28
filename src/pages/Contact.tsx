@@ -159,7 +159,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-1">Email</h3>
-                  <p className="text-gray-400">hello@bwxac.com</p>
+                  <p className="text-gray-400">hello@bashararthouz.com</p>
                 </div>
               </div>
             </ScrollReveal>
