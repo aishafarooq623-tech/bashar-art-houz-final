@@ -53,9 +53,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onMenuClick }) => {
         {/* Social Icons (animated like text) */}
         <div className="flex space-x-6 text-white text-xl">
           {[
-            { Icon: FaInstagram, href: "http://instagram.com/shammaskavi/" },
-            { Icon: FaFacebookF, href: "https://www.linkedin.com/company/zawr-industries/posts/?feedView=all" },
-            { Icon: FaTwitter, href: "http://twitter.com/shammaskavi/" },
+            { Icon: FaInstagram, href: "http://instagram.com/" },
+            { Icon: FaFacebookF, href: "https://www.linkedin.com/" },
+            { Icon: FaWhatsApp, href: "http://twitter.com/" },
+            { Icon: FaTwitter, href: "http://twitter.com/" },
           ].map(({ Icon, href }, idx) => (
             <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
               <Icon className="hover:text-gold transition-colors duration-300" />
