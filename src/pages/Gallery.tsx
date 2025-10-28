@@ -428,7 +428,7 @@ const Gallery = () => {
               <div className="space-y-4 text-lg">
                 <div className="flex items-center justify-center gap-4">
                   <Mail className="h-5 w-5 text-gold" />
-                  <span className="text-cream/85">Email: houzofbashar@demo.com</span>
+                  <span className="text-cream/85">Email: info@bashararthouz.com/span>
                 </div>
                 <div className="flex items-center justify-center gap-4">
                   <Phone className="h-5 w-5 text-gold" />
