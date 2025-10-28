@@ -313,7 +313,7 @@ const Cafe = () => {
               positive impact in our community and beyond.
             </p>
           
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg" onClick={() => window.open("https://www.quratalainbashar.com", "_blank")>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg" onClick={() => window.open("https://www.quratalainbashar.com", "_blank")}>
               Learn More About Our Foundation
             </Button>
           </ScrollReveal>
