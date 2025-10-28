@@ -303,7 +303,10 @@ const Cafe = () => {
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal direction="up">
             <h2 className="text-4xl font-bold text-foreground mb-6 font-playfair">
-              Qurat-Al-Ain Bashar Foundation
+              Qurat-Al-Ain Bashar
+            </h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6 font-playfair">
+              Foundation
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               We achieve our mission through our Qurat-Al-Ain Bashar Foundation, creating lasting
