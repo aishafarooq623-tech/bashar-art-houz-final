@@ -337,10 +337,10 @@ The artist playground.           </p>
                     community, promoting artistic vision, physical well-being, and social good. This unique concept
                     aims to inspire individuals to express themselves artistically while also fostering a healthy
                     lifestyle and a commitment to social causes.
-                    <span className="text-gold italic">
+                    <span className="text-gold italic"> <p>
                       Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation an initiative
                       yet again by BASHAR which simply stands on the fundamental principle of “The Art of giving.”
-                    </span>
+                    </p></span>
                   </ScrollReveal>
 
                   {/* Scroller text thingy  */}
